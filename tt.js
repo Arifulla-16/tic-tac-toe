@@ -44,6 +44,7 @@ function adder(){
     moves++;
     if(moves===9){
        gamee_end();
+       return;
     }
     this.innerHTML=letter[turn];
     if(turn===1){

@@ -42,10 +42,6 @@ function adder(){
         return;
     }
     moves++;
-    if(moves===9){
-       gamee_end();
-       return;
-    }
     this.innerHTML=letter[turn];
     if(turn===1){
         board[this.getAttribute('data-cell').slice(0,-1)][this.getAttribute('data-cell').slice(-1)]="O";
@@ -58,6 +54,10 @@ function adder(){
         checker("X",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1));
         turn=1;
         tt.innerHTML=letter[turn];
+    }
+    if(moves===9){
+       gamee_end();
+       return;
     }
     console.log(board);
 }

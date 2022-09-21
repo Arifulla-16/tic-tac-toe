@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tt.css">
+</head>
+<body>
+    <section class="centrer">
+        <div id="heading">
+            <h1>Tic Tac Toe!</h1>
+        </div>
+
+        <div id="turn">
+            <span>Turn:</span>
+            <span id="XO">X</span>
+        </div>
+
+        <div id="container">
+            <span id="c00" data-cell="00"></span>
+            <span id="c01" data-cell="01"></span>
+            <span id="c02" data-cell="02"></span>
+            <span id="c10" data-cell="10"></span>
+            <span id="c11" data-cell="11"></span>
+            <span id="c12" data-cell="12"></span>
+            <span id="c20" data-cell="20"></span>
+            <span id="c21" data-cell="21"></span>
+            <span id="c22" data-cell="22"></span>
+
+            <div class="winner">
+                <span></span>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script type="text/javascript" src="tt.js"></script>
+</html>

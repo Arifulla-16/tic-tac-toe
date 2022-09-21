@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    color: #1B262C;
+}
+
+body{
+    background-color: #BBE1FA;
+    display: grid;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.centrer{
+    text-align: center;
+    margin: auto;
+}
+
+.centrer>div{
+    margin: 13% 0%;
+    overflow: hidden;
+}
+
+
+#heading{
+    font-size: 2rem;
+}
+
+#container{
+    background-color: #3282B8;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    height: 400px;
+    width: 400px;
+    row-gap: 4px;
+    column-gap: 4px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#container>span{
+    text-align: center;
+    background-color:#0F4C75;
+    font-size: 3rem;
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#turn{
+    font-size: 1.5rem;
+}
+
+.winner{
+    display: none;
+    box-shadow: 3px 3px 6px 3px;
+    background-color:#3282b8a6;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    font-size: 2rem;
+    position: relative;
+    top: -408px;
+}
+
+@media screen and (max-width: 762px) {
+    #container{
+        height: 300px;
+        width: 300px;
+    }
+    .winner{
+        height: 300px;
+        width: 300px;
+        top:-309px;
+    }
+}

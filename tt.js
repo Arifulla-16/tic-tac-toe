@@ -44,13 +44,17 @@ function adder(){
     this.innerHTML=letter[turn];
     if(turn===1){
         board[this.getAttribute('data-cell').slice(0,-1)][this.getAttribute('data-cell').slice(-1)]="O";
-        checker("O",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1));
+        if(checker("O",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1))===true){
+             return;
+        }
         turn=0;
         tt.innerHTML=letter[turn];
     }
     else if(turn===0){
         board[this.getAttribute('data-cell').slice(0,-1)][this.getAttribute('data-cell').slice(-1)]="X";
-        checker("X",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1));
+        if(checker("X",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1))===true){
+             return;
+        }
         turn=1;
         tt.innerHTML=letter[turn];
     }
@@ -67,7 +71,9 @@ function checker(data,i,j){
     console.log(i+"  "+j);
     if(check_row(i,data) || check_col(j,data) || check_diag(i,j,data) || check_alterdiag(i,j,data)){
         game_end();
+        return true;
     }
+    return false;
 }
 
 function check_row(i,data){

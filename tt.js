@@ -1,6 +1,8 @@
 var letter = ["X","O"];
 var turn = 0;
 
+var moves=0;
+
 var board = new Array(3);
 
 for (var i = 0; i < board.length; i++) {
@@ -38,6 +40,10 @@ cell9.addEventListener("click",adder);
 function adder(){
     if(this.innerHTML!=""){
         return;
+    }
+    moves++;
+    if(moves===9){
+       gamee_end();
     }
     this.innerHTML=letter[turn];
     if(turn===1){
@@ -101,6 +107,16 @@ function check_alterdiag(i,j,data){
     return false;
 }
 
+function gamee_end(){
+
+    var ab = document.querySelector(".winner span");
+
+    ab.innerHTML="Draw!!";
+    var bc = document.querySelector(".winner");
+    bc.style.display="grid";
+    bc.addEventListener("click",restarter);
+}
+
 
 function game_end(){
 
@@ -128,7 +144,7 @@ function restarter(){
             board[i][j]=undefined;
         }
     }
-
+    moves=0;
     var bc = document.querySelector(".winner");
     bc.style.display="none";
 }

@@ -49,7 +49,7 @@ function adder(){
         turn=0;
         tt.innerHTML=letter[turn];
     }
-    else{
+    else if(turn===0){
         board[this.getAttribute('data-cell').slice(0,-1)][this.getAttribute('data-cell').slice(-1)]="X";
         checker("X",this.getAttribute('data-cell').slice(0,-1),this.getAttribute('data-cell').slice(-1));
         turn=1;
